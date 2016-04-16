@@ -13,18 +13,19 @@ var logName = function(lang1, lang2){
   console.log('---------------');
 }//.bind(person); this works too
 
-//creates a copy of the logName function
+//bind creates a copy of the logName function
 var logPersonName = logName.bind(person);
 
 //logNAme();
 logPersonName('en', 'es');
 
-//executes the function
+//call executes the function
 logName.call(person, 'en', 'es');
 
-//works the same way, but instead it wants an array of parameters
+//works the same way as call, but instead it wants an array of parameters
 logName.apply(person, ['en', 'es']);
 
+//creating a function on the fly and invoking it using apply
 (function(lang1, lang2){
 
   console.log('Logged: ' + this.getFullName());
